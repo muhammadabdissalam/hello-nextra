@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nextra-toc {
+  display: none !important;
+}
+
+.nx-max-w-4xl {
+  max-width: 100rem !important;
+}
+
+.nx-text-primary-600 {
+  color: #16b3ac;
+}
+
+.nx-bg-primary-50 {
+  background-color: #ffffff;
+}
+
+.nx-bg-primary-700\/5 {
+  background-color: #262626;
+}
