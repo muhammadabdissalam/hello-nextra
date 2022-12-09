@@ -1,0 +1,100 @@
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative" markdown="1">
+<div markdown="1" className="md:col-span-2">
+# Integrasi rekam medis
+
+### Pengantar integrasi
+
+Gunakan kombinasi kode di bawah untuk melakukan konfigurasi pada sandbox environment SATUSEHAT.
+
+import InfoBanner from '/components/InfoBanner.js';
+
+<InfoBanner>
+  Integrasi API membutuhkan akses token, data organisasi, data lokasi dan data tenaga kesehatan. Jika Anda belum
+  melakukan autentikasi token di platform SATUSEHAT, silahkan ikuti langkah autentikasi [di
+  sini](https://satusehat-dev.dto.kemkes.go.id/)
+</InfoBanner>
+
+import Devider from '/components/Devider.js';
+
+<Devider />
+
+### Pendaftaran kunjungan pasien
+
+Kunjungan pasien dapat didefinisikan sebagai interaksi pasien terhadap suatu layanan fasyankes. Misal dalam satu rangkaian rawat jalan, seluruh rangkaian dapat didefinisikan sebagai satu “Encounter”. Namun, rangkaian rawat inap memungkinkan pasien memiliki beberapa “Encounter” terhadap satu jenis layanan yang sama. Data-data kunjungan pasien yang direkam meliputi kapan pertemuan tersebut mulai dan selesai, siapa tenaga kesehatan yang melayani, siapa subjek dari pelayanannya, dan informasi pendukung lainnya
+
+**Contoh**: Pasien bernama Budi Santoso melakukan kunjungan rawat jalan dengan Dokter Bronsig pada tanggal 14 Juni 2022 jam 7 pagi di RSUD Jati Asih. Budi selesai diperiksa oleh dokter dan didiagnosa dengan:\
+Primer: Penyakit Tuberkulosis Paru berdasarkan hasil tes sputum dan diabetes melitus tipe 2 Sekunder: Diabetes Mellitus tanpa komplikasi
+
+**Kunjungan awal** - contoh payload dengan metode POST
+
+import APIBlock from '/components/APIBlock.js';
+
+<APIBlock method="POST">
+  [https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Encounter](https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Encounter)
+</APIBlock>
+
+<InfoBanner>
+  Integrasi API membutuhkan akses token, data organisasi, data lokasi dan data tenaga kesehatan. Jika Anda belum
+  melakukan autentikasi token di platform SATUSEHAT, silahkan ikuti langkah autentikasi [di
+  sini](https://satusehat-dev.dto.kemkes.go.id/)
+</InfoBanner>
+
+**&#9830; Response**
+
+|                                                                                201 Success                                                                                 |                                                                              401 Client error                                                                              |                                                                              505 Server error                                                                              |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Didalam response akan ada Encounter.id = “2823ed1d-3e3e-434e-9a5b-9c579d192787” yang di generate secara otomatis. Simpan Encounter.id ini untuk digunakan di resource lain | Didalam response akan ada Encounter.id = “2823ed1d-3e3e-434e-9a5b-9c579d192787” yang di generate secara otomatis. Simpan Encounter.id ini untuk digunakan di resource lain | Didalam response akan ada Encounter.id = “2823ed1d-3e3e-434e-9a5b-9c579d192787” yang di generate secara otomatis. Simpan Encounter.id ini untuk digunakan di resource lain |
+
+Pada saat pendaftaran kunjungan pasien, elemen berikut ini yang wajib dikirimkan
+
+- Encounter.status
+- Encounter.statusHistory
+- Encounter.class
+- Encounter.subject
+- Encounter.period.start
+- Encounter.location
+- Encounter.serviceProvider
+
+Untuk elemen mandatoris lainnya dapat dikirimkan setelah kunjungan berakhir.
+
+|  Elemen data / path  |    Tipe mandatoris    |                                                                                                                                                         Deskripsi                                                                                                                                                         |
+| :------------------: | :-------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Encounter.identifier | Optional (Omit Empty) | <li> ID internal faskes untuk kunjungan ini. Ini adalah ID resmi yang diterbitkan oleh faskes untuk menandai kunjungan pasien. </li> <li>Format pengisian</li> Untuk detil “konten” silahkan kunjungi <a href="https://satusehat-dev.dto.kemkes.go.id/" target="_blank" className="text-[#16B3AC] underline">link ini</a> |
+|   Encounter.status   |      Mandatoris       |                                                         <li> Status tahapan dari pertemuan pasien</li> Untuk detil “konten” silahkan kunjungi <a href="https://satusehat-dev.dto.kemkes.go.id/" target="_blank" className="text-[#16B3AC] underline">link ini</a>                                                         |
+
+</div>
+
+```js
+{
+    "entry": [
+        {
+            "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Patient/100000030009",
+            "resource": {
+                "_birthDate": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
+                            "valueDateTime": "1944-11-17T15:39:00+07:00"
+                        }
+                    ]
+                }
+            }
+        },
+                {
+            "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Patient/100000030009",
+            "resource": {
+                "_birthDate": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
+                            "valueDateTime": "1944-11-17T15:39:00+07:00"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+</div>

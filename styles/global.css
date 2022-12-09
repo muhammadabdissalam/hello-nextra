@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-family: 'Poppins';
+}
 .nextra-toc {
   display: none !important;
 }
@@ -20,4 +23,18 @@
 
 .nx-bg-primary-700\/5 {
   background-color: #262626;
+}
+
+th {
+  background: #e0e0e0;
+}
+
+td {
+  text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+  th {
+    background: black;
+  }
 }
