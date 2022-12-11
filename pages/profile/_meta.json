@@ -1,4 +1,7 @@
 {
   "profile": "Akun",
-  "edit-profile": "Ubah Akun"
+  "edit-profile": {
+    "title": "Ubah Akun",
+    "display": "hidden"
+  }
 }
