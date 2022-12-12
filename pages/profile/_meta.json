@@ -2,6 +2,6 @@
   "profile": "Akun",
   "edit-profile": {
     "title": "Ubah Akun",
-    "display": "hidden"
+    "display": "true"
   }
 }

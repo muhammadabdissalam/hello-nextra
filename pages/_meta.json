@@ -1,5 +1,9 @@
 {
   "index": "SATUSEHAT",
-  "onboarding": "Onboarding SATUSEHAT",
+  "example": "Contoh",
+  "onboarding": {
+    "title": "Onboarding SATUSEHAT",
+    "display": "true"
+  },
   "profile": "Akun"
 }
