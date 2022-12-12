@@ -1,5 +1,5 @@
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative" markdown="1">
-<div markdown="1" className="md:col-span-2">
+<div className="side-by-side-parent" markdown="1">
+<div className="side-by-side-left-content" markdown="1" >
 # Integrasi rekam medis
 
 ### Pengantar integrasi
@@ -9,9 +9,9 @@ Gunakan kombinasi kode di bawah untuk melakukan konfigurasi pada sandbox environ
 import InfoBanner from '/components/InfoBanner.js';
 
 <InfoBanner>
-  Integrasi API membutuhkan akses token, data organisasi, data lokasi dan data tenaga kesehatan. Jika Anda belum
-  melakukan autentikasi token di platform SATUSEHAT, silahkan ikuti langkah autentikasi [di
-  sini](https://satusehat-dev.dto.kemkes.go.id/)
+  {/* Content here */}
+  Integrasi API membutuhkan akses token, data organisasi, data lokasi dan data tenaga kesehatan. Jika Anda belum melakukan
+  autentikasi token di platform SATUSEHAT, silahkan ikuti langkah autentikasi [di sini](https://satusehat-dev.dto.kemkes.go.id/)
 </InfoBanner>
 
 import Devider from '/components/Devider.js';
@@ -30,13 +30,14 @@ Primer: Penyakit Tuberkulosis Paru berdasarkan hasil tes sputum dan diabetes mel
 import APIBlock from '/components/APIBlock.js';
 
 <APIBlock method="POST">
+  {/* Url here */}
   [https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Encounter](https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Encounter)
 </APIBlock>
 
 <InfoBanner>
-  Integrasi API membutuhkan akses token, data organisasi, data lokasi dan data tenaga kesehatan. Jika Anda belum
-  melakukan autentikasi token di platform SATUSEHAT, silahkan ikuti langkah autentikasi [di
-  sini](https://satusehat-dev.dto.kemkes.go.id/)
+  {/* Content here */}
+  Integrasi API membutuhkan akses token, data organisasi, data lokasi dan data tenaga kesehatan. Jika Anda belum melakukan
+  autentikasi token di platform SATUSEHAT, silahkan ikuti langkah autentikasi [di sini](https://satusehat-dev.dto.kemkes.go.id/)
 </InfoBanner>
 
 **&#9830; Response**
@@ -63,6 +64,8 @@ Untuk elemen mandatoris lainnya dapat dikirimkan setelah kunjungan berakhir.
 |   Encounter.status   |      Mandatoris       |                                                         <li> Status tahapan dari pertemuan pasien</li> Untuk detil “konten” silahkan kunjungi <a href="https://satusehat-dev.dto.kemkes.go.id/" target="_blank" className="text-[#16B3AC] underline">link ini</a>                                                         |
 
 </div>
+
+{/* Code here */}
 
 ```js
 {
