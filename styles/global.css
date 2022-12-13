@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --shiki-token-string-expression: #16b3ac;
+  --shiki-color-text: white;
+}
+
 html {
   font-family: 'Poppins';
+  font-size: 0.875rem;
 }
 .nextra-toc {
   display: none !important;
@@ -38,9 +44,17 @@ html[class~='dark'] th {
 }
 
 .side-by-side-parent {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-4 relative;
+  @apply grid grid-cols-1 md:grid-cols-12 gap-4 relative;
 }
 
 .side-by-side-left-content {
-  @apply md:col-span-2;
+  @apply md:col-span-7;
+}
+
+.nx-max-w-\[90rem\] {
+  max-width: 120rem;
+}
+
+pre {
+  white-space: pre-wrap;
 }

@@ -10,8 +10,13 @@ import InfoBanner from '/components/InfoBanner.js';
 
 <InfoBanner>
   {/* Content here */}
-  Integrasi API membutuhkan akses token, data organisasi, data lokasi dan data tenaga kesehatan. Jika Anda belum melakukan
-  autentikasi token di platform SATUSEHAT, silahkan ikuti langkah autentikasi [di sini](https://satusehat-dev.dto.kemkes.go.id/)
+  Integrasi API membutuhkan akses
+  token, data organisasi, data
+  lokasi dan data tenaga kesehatan.
+  Jika Anda belum melakukan autentikasi
+  token di platform SATUSEHAT,
+  silahkan ikuti langkah autentikasi
+  [di sini](https://satusehat-dev.dto.kemkes.go.id/)
 </InfoBanner>
 
 import Devider from '/components/Devider.js';
@@ -36,8 +41,13 @@ import APIBlock from '/components/APIBlock.js';
 
 <InfoBanner>
   {/* Content here */}
-  Integrasi API membutuhkan akses token, data organisasi, data lokasi dan data tenaga kesehatan. Jika Anda belum melakukan
-  autentikasi token di platform SATUSEHAT, silahkan ikuti langkah autentikasi [di sini](https://satusehat-dev.dto.kemkes.go.id/)
+  Integrasi API membutuhkan akses
+  token, data organisasi, data
+  lokasi dan data tenaga kesehatan.
+  Jika Anda belum melakukan autentikasi
+  token di platform SATUSEHAT,
+  silahkan ikuti langkah autentikasi
+  [di sini](https://satusehat-dev.dto.kemkes.go.id/)
 </InfoBanner>
 
 **&#9830; Response**
@@ -67,39 +77,45 @@ Untuk elemen mandatoris lainnya dapat dikirimkan setelah kunjungan berakhir.
 
 {/* Code here */}
 
+<div className="md:-mr-6 md:col-span-5">
 ```js
 {
-    "entry": [
-        {
-            "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Patient/100000030009",
-            "resource": {
-                "_birthDate": {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
-                            "valueDateTime": "1944-11-17T15:39:00+07:00"
-                        }
-                    ]
-                }
-            }
+  "entry":
+  [
+    {
+      fullUrl:
+        'https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Patient/100000030009',
+      resource: {
+        _birthDate: {
+          extension: [
+            {
+              url: 'http://hl7.org/fhir/StructureDefinition/patient-birthTime',
+              valueDateTime:
+                '1944-11-17T15:39:00+07:00',
+            },
+          ],
         },
-                {
-            "fullUrl": "https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Patient/100000030009",
-            "resource": {
-                "_birthDate": {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
-                            "valueDateTime": "1944-11-17T15:39:00+07:00"
-                        }
-                    ]
-                }
-            }
-        }
-    ]
+      },
+    },
+    {
+      fullUrl:
+        'https://api-satusehat-dev.dto.kemkes.go.id/fhir-r4/v1/Patient/100000030009',
+      resource: {
+        _birthDate: {
+          extension: [
+            {
+              url: 'http://hl7.org/fhir/StructureDefinition/patient-birthTime',
+              valueDateTime:
+                '1944-11-17T15:39:00+07:00',
+            },
+          ],
+        },
+      },
+    },
+  ];
 }
 ```
-
+</div>
 </div>
 
 [Edit this page in github](https://github.com/muhammadabdissalam/hello-nextra/blob/main/pages/onboarding/authentification.mdx)
